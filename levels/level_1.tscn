@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://be0dddm4lxche"]
+
+[ext_resource type="TileSet" uid="uid://08uqc7ao0ed6" path="res://tilesets/static_objects.tres" id="1_vn7o3"]
+
+[node name="level_1" type="Node2D" unique_id=12714394]
+
+[node name="background" type="TileMapLayer" parent="." unique_id=632314508]
+tile_set = ExtResource("1_vn7o3")
+
+[node name="foreground" type="TileMapLayer" parent="." unique_id=1986386446]
+
+[node name="midground" type="TileMapLayer" parent="." unique_id=1986256512]
+
+[node name="objects" type="TileMapLayer" parent="." unique_id=2125061910]
