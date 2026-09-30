@@ -2,8 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://c802hx56v7owm" path="res://player/Free - 2-Direction Male Character.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://cqm5pwv7f8c8l" path="res://player/player.gd" id="1_rkbax"]
+[ext_resource type="Script" uid="uid://cwrb2qphjto3g" path="res://player/player_sprite.gd" id="3_g1dw6"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0yd1l"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkbax"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rkbax"]
 atlas = ExtResource("1_oul6g")
@@ -191,7 +192,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8t03j")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"die",
 "speed": 9.0
 }, {
@@ -240,7 +241,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s7qer")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"jump",
 "speed": 10.0
 }, {
@@ -272,7 +273,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1s1yo")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"land",
 "speed": 10.0
 }, {
@@ -306,16 +307,16 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="player" type="CharacterBody2D" unique_id=1780771240]
+[node name="player" type="CharacterBody2D" unique_id=1780771240 groups=["player"]]
 script = ExtResource("1_rkbax")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=823574427]
-position = Vector2(0, 3.0000002)
-scale = Vector2(1.0751994, 1.2800014)
-shape = SubResource("CapsuleShape2D_0yd1l")
+position = Vector2(0, 2)
+scale = Vector2(0.91520166, 1.6800013)
+shape = SubResource("RectangleShape2D_rkbax")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1390797348]
+[node name="player" type="AnimatedSprite2D" parent="." unique_id=1390797348]
+unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_0yd1l")
-animation = &"jump"
-frame = 3
-frame_progress = 0.0416305
+animation = &"idle"
+script = ExtResource("3_g1dw6")
